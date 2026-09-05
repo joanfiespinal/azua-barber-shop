@@ -1,0 +1,1397 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Azua Barber Shop | Estilo & Calidad</title>
+
+    <meta name="description"
+        content="Azua Barber Shop. Cortes modernos, clásicos, barba y estilos personalizados en Santo Domingo.">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700;800&display=swap"
+        rel="stylesheet">
+
+    <style>
+        :root {
+            --negro: #080808;
+            --negro-2: #101010;
+            --card: #151515;
+            --card-hover: #1c1c1c;
+            --dorado: #6e95ff;
+            --dorado-claro: #6890e6;
+            --blanco: #ffffff;
+            --gris: #a7a7a7;
+            --verde: #25ec40;
+            --borde: rgb(23, 96, 255);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: "Inter", sans-serif;
+            background:
+                radial-gradient(
+                    circle at 10% 10%,
+                    rgba(212, 175, 55, .08),
+                    transparent 30%
+                ),
+                radial-gradient(
+                    circle at 90% 50%,
+                    rgba(212, 175, 55, .05),
+                    transparent 25%
+                ),
+                var(--negro);
+
+            color: var(--blanco);
+            line-height: 1.6;
+        }
+
+        /* =========================
+           NAVEGACIÓN
+        ========================= */
+
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            padding: 18px 6%;
+
+            background: rgba(8, 8, 8, .78);
+
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+
+            border-bottom: 1px solid rgba(255,255,255,.08);
+        }
+
+        .logo {
+            color: var(--dorado);
+            font-size: 20px;
+            font-weight: 800;
+            text-decoration: none;
+            letter-spacing: .5px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 28px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: #ddd;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 600;
+            transition: .3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--dorado);
+        }
+
+        /* =========================
+           HERO
+        ========================= */
+
+        .hero {
+            min-height: 100vh;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            text-align: center;
+
+            padding: 120px 20px 80px;
+
+            position: relative;
+            overflow: hidden;
+
+            background:
+                linear-gradient(
+                    rgba(0,0,0,.72),
+                    rgba(0,0,0,.82)
+                ),
+                url("foto barbershop.jpeg");
+
+            background-size: cover;
+            background-position: center;
+        }
+
+        .hero::after {
+            content: "";
+
+            position: absolute;
+            inset: 0;
+
+            background:
+                radial-gradient(
+                    circle at center,
+                    transparent 100%,
+                    rgba(0,0,0,.45) 70%,
+                    rgba(0,0,0,.9) 100%
+                );
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 850px;
+        }
+
+        .hero-tag {
+            display: inline-block;
+
+            color: var(--dorado-claro);
+
+            border: 1px solid var(--borde);
+
+            background: rgba(212,175,55,.08);
+
+            padding: 8px 16px;
+
+            border-radius: 100px;
+
+            font-size: 12px;
+            font-weight: 700;
+
+            text-transform: uppercase;
+
+            letter-spacing: 2px;
+
+            margin-bottom: 24px;
+        }
+
+        .hero h1 {
+            font-family: "Playfair Display", serif;
+
+            font-size: clamp(55px, 9vw, 105px);
+
+            line-height: .95;
+
+            margin-bottom: 25px;
+
+            background:
+                linear-gradient(
+                    120deg,
+                    #fff,
+                    var(--dorado-claro),
+                    var(--dorado)
+                );
+
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero p {
+            color: #ddd;
+
+            font-size: clamp(17px, 2vw, 22px);
+
+            max-width: 650px;
+
+            margin: auto;
+        }
+
+        .hero-buttons {
+            margin-top: 35px;
+
+            display: flex;
+
+            justify-content: center;
+
+            gap: 14px;
+
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-flex;
+
+            align-items: center;
+            justify-content: center;
+
+            padding: 15px 25px;
+
+            border-radius: 10px;
+
+            text-decoration: none;
+
+            font-weight: 700;
+
+            transition: .3s;
+        }
+
+        .btn-gold {
+            background: var(--dorado);
+
+            color: #080808;
+
+            box-shadow:
+                0 10px 30px rgba(212,175,55,.18);
+        }
+
+        .btn-gold:hover {
+            background: var(--dorado-claro);
+            transform: translateY(-3px);
+        }
+
+        .btn-outline {
+            color: white;
+
+            border: 1px solid rgba(255,255,255,.25);
+
+            background: rgba(255,255,255,.05);
+        }
+
+        .btn-outline:hover {
+            border-color: var(--dorado);
+
+            color: var(--dorado);
+
+            transform: translateY(-3px);
+        }
+
+        /* =========================
+           CONTENEDOR
+        ========================= */
+
+        .contenedor {
+            width: min(1100px, 90%);
+            margin: auto;
+        }
+
+        /* =========================
+           SECCIONES
+        ========================= */
+
+        section {
+            padding: 90px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-title span {
+            color: var(--dorado);
+
+            font-size: 12px;
+
+            font-weight: 800;
+
+            text-transform: uppercase;
+
+            letter-spacing: 3px;
+        }
+
+        .section-title h2 {
+            font-family: "Playfair Display", serif;
+
+            font-size: clamp(35px, 5vw, 52px);
+
+            margin-top: 8px;
+        }
+
+        .section-title p {
+            color: var(--gris);
+
+            max-width: 600px;
+
+            margin: 12px auto 0;
+        }
+
+        /* =========================
+           SOBRE NOSOTROS
+        ========================= */
+
+        .about {
+            display: grid;
+
+            grid-template-columns: 1fr 1fr;
+
+            gap: 60px;
+
+            align-items: center;
+        }
+
+        .about-image {
+            min-height: 480px;
+
+            border-radius: 24px;
+
+            background:
+                linear-gradient(
+                    rgba(0,0,0,.1),
+                    rgba(0,0,0,.4)
+                ),
+                url("foto azua.jpeg");
+
+            background-size: cover;
+
+            background-position: center;
+
+            border: 1px solid rgba(255,255,255,.1);
+
+            box-shadow:
+                0 25px 70px rgba(0,0,0,.5);
+        }
+
+        .about-text h3 {
+            font-family: "Playfair Display", serif;
+
+            font-size: 35px;
+
+            margin-bottom: 20px;
+        }
+
+        .about-text p {
+            color: var(--gris);
+
+            margin-bottom: 18px;
+        }
+
+        .highlight {
+            color: var(--dorado);
+
+            font-weight: 700;
+        }
+
+        /* =========================
+           SERVICIOS
+        ========================= */
+
+        .servicios {
+            display: grid;
+
+            grid-template-columns:
+                repeat(3, 1fr);
+
+            gap: 18px;
+        }
+
+        .servicio {
+            background:
+                linear-gradient(
+                    145deg,
+                    rgba(255,255,255,.055),
+                    rgba(255,255,255,.015)
+                );
+
+            border: 1px solid rgba(255,255,255,.08);
+
+            border-radius: 18px;
+
+            padding: 30px 25px;
+
+            transition: .35s;
+
+            position: relative;
+
+            overflow: hidden;
+        }
+
+        .servicio::before {
+            content: "";
+
+            position: absolute;
+
+            top: 0;
+            left: 0;
+
+            width: 100%;
+            height: 2px;
+
+            background:
+                linear-gradient(
+                    90deg,
+                    transparent,
+                    var(--dorado),
+                    transparent
+                );
+
+            opacity: .5;
+        }
+
+        .servicio:hover {
+            transform: translateY(-7px);
+
+            background: var(--card-hover);
+
+            border-color: var(--borde);
+
+            box-shadow:
+                0 20px 50px rgba(0,0,0,.35);
+        }
+
+        .icon {
+            width: 52px;
+            height: 52px;
+
+            display: grid;
+
+            place-items: center;
+
+            border-radius: 14px;
+
+            background:
+                rgba(212,175,55,.1);
+
+            border: 1px solid var(--borde);
+
+            font-size: 23px;
+
+            margin-bottom: 20px;
+        }
+
+        .servicio h3 {
+            font-size: 18px;
+
+            margin-bottom: 10px;
+        }
+
+        .servicio p {
+            color: var(--gris);
+
+            font-size: 14px;
+
+            min-height: 45px;
+        }
+
+        .precio {
+            margin-top: 20px;
+
+            color: var(--dorado-claro);
+
+            font-size: 23px;
+
+            font-weight: 800;
+        }
+
+        /* =========================
+           INFORMACIÓN
+        ========================= */
+
+        .info-grid {
+            display: grid;
+
+            grid-template-columns:
+                repeat(3, 1fr);
+
+            gap: 18px;
+        }
+
+        .info-card {
+            padding: 28px;
+
+            background: var(--card);
+
+            border: 1px solid rgba(255,255,255,.08);
+
+            border-radius: 18px;
+
+            text-align: center;
+        }
+
+        .info-card .info-icon {
+            font-size: 28px;
+
+            margin-bottom: 12px;
+        }
+
+        .info-card h3 {
+            color: var(--dorado);
+
+            font-size: 15px;
+
+            margin-bottom: 8px;
+        }
+
+        .info-card p {
+            color: var(--gris);
+
+            font-size: 14px;
+        }
+
+        /* =========================
+           RESERVA
+        ========================= */
+
+        .booking {
+            text-align: center;
+
+            padding: 70px 30px;
+
+            border-radius: 25px;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    rgba(212,175,55,.15),
+                    rgba(212,175,55,.03)
+                );
+
+            border: 1px solid var(--borde);
+        }
+
+        .booking h2 {
+            font-family: "Playfair Display", serif;
+
+            font-size: clamp(35px, 5vw, 55px);
+        }
+
+        .booking p {
+            color: var(--gris);
+
+            max-width: 550px;
+
+            margin: 15px auto 25px;
+        }
+
+        .whatsapp {
+            display: inline-flex;
+
+            align-items: center;
+
+            gap: 10px;
+
+            background: var(--verde);
+
+            color: white;
+
+            padding: 15px 25px;
+
+            border-radius: 10px;
+
+            text-decoration: none;
+
+            font-weight: 800;
+
+            box-shadow:
+                0 12px 30px rgba(37,211,102,.15);
+
+            transition: .3s;
+        }
+
+        .whatsapp:hover {
+            transform: translateY(-3px);
+
+            background: #20bd5a;
+        }
+
+        /* =========================
+           FORMULARIO
+        ========================= */
+
+        .formulario {
+            max-width: 700px;
+
+            margin: auto;
+
+            background: var(--card);
+
+            padding: 35px;
+
+            border-radius: 20px;
+
+            border: 1px solid rgba(255,255,255,.08);
+        }
+
+        form {
+            display: grid;
+
+            gap: 5px;
+        }
+
+        label {
+            margin-top: 15px;
+
+            margin-bottom: 5px;
+
+            font-size: 14px;
+
+            font-weight: 600;
+        }
+
+        input,
+        textarea {
+            width: 100%;
+
+            padding: 15px;
+
+            color: white;
+
+            background: #0d0d0d;
+
+            border: 1px solid rgba(255,255,255,.1);
+
+            border-radius: 10px;
+
+            outline: none;
+
+            font-family: inherit;
+
+            font-size: 15px;
+
+            transition: .3s;
+        }
+
+        input:focus,
+        textarea:focus {
+            border-color: var(--dorado);
+
+            box-shadow:
+                0 0 0 3px rgba(212,175,55,.08);
+        }
+
+        textarea {
+            min-height: 140px;
+
+            resize: vertical;
+        }
+
+        button {
+            margin-top: 22px;
+
+            padding: 15px;
+
+            background: var(--dorado);
+
+            color: #080808;
+
+            border: none;
+
+            border-radius: 10px;
+
+            font-size: 15px;
+
+            font-weight: 800;
+
+            cursor: pointer;
+
+            transition: .3s;
+        }
+
+        button:hover {
+            background: var(--dorado-claro);
+
+            transform: translateY(-2px);
+        }
+
+        /* =========================
+           FOOTER
+        ========================= */
+
+        footer {
+            padding: 45px 20px;
+
+            text-align: center;
+
+            border-top: 1px solid rgba(255,255,255,.08);
+
+            color: #777;
+        }
+
+        footer strong {
+            color: var(--dorado);
+        }
+
+        /* =========================
+           WHATSAPP FLOTANTE
+        ========================= */
+
+        .whatsapp-float {
+            position: fixed;
+
+            right: 22px;
+
+            bottom: 22px;
+
+            width: 58px;
+
+            height: 58px;
+
+            display: grid;
+
+            place-items: center;
+
+            background: var(--verde);
+
+            color: white;
+
+            border-radius: 50%;
+
+            font-size: 26px;
+
+            text-decoration: none;
+
+            box-shadow:
+                0 10px 30px rgba(0,0,0,.45);
+
+            z-index: 999;
+
+            transition: .3s;
+        }
+
+        .whatsapp-float:hover {
+            transform: scale(1.1);
+        }
+
+        /* =========================
+           RESPONSIVE
+        ========================= */
+
+        @media (max-width: 850px) {
+
+            .nav-links {
+                display: none;
+            }
+
+            .about {
+                grid-template-columns: 1fr;
+
+                gap: 35px;
+            }
+
+            .about-image {
+                min-height: 350px;
+            }
+
+            .servicios {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .info-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 600px) {
+
+            nav {
+                padding: 16px 5%;
+            }
+
+            .hero {
+                min-height: 90vh;
+            }
+
+            section {
+                padding: 65px 0;
+            }
+
+            .servicios {
+                grid-template-columns: 1fr;
+            }
+
+            .formulario {
+                padding: 25px 20px;
+            }
+
+            .hero-buttons {
+                flex-direction: column;
+            }
+
+            .btn {
+                width: 100%;
+            }
+
+            .booking {
+                padding: 50px 20px;
+            }
+
+            .whatsapp-float {
+                width: 52px;
+
+                height: 52px;
+
+                right: 16px;
+
+                bottom: 16px;
+            }
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <!-- =========================
+         NAVEGACIÓN
+    ========================= -->
+
+    <nav>
+
+        <a href="#" class="logo">
+            ✂ AZUA BARBER SHOP
+        </a>
+
+        <ul class="nav-links">
+
+            <li>
+                <a href="#nosotros">
+                    Nosotros
+                </a>
+            </li>
+
+            <li>
+                <a href="#servicios">
+                    Servicios
+                </a>
+            </li>
+
+            <li>
+                <a href="#informacion">
+                    Información
+                </a>
+            </li>
+
+            <li>
+                <a href="#cita">
+                    Reservar
+                </a>
+            </li>
+
+        </ul>
+
+    </nav>
+
+
+    <!-- =========================
+         HERO
+    ========================= -->
+
+    <header class="hero">
+
+        <div class="hero-content">
+
+            <span class="hero-tag">
+                Barbería Premium
+            </span>
+
+            <h1>
+                Azua<br>
+                Barber Shop
+            </h1>
+
+            <p>
+                Estilo, precisión y personalidad.
+                Tu próximo corte empieza aquí.
+            </p>
+
+            <div class="hero-buttons">
+
+                <a href="#servicios"
+                    class="btn btn-gold">
+
+                    Ver servicios
+
+                </a>
+
+                <a href="https://wa.me/18492590890"
+                    target="_blank"
+                    class="btn btn-outline">
+
+                    💬 Reservar cita
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </header>
+
+
+    <main class="contenedor">
+
+
+        <!-- =========================
+             NOSOTROS
+        ========================= -->
+
+        <section id="nosotros">
+
+            <div class="section-title">
+
+                <span>
+                    Quiénes somos
+                </span>
+
+                <h2>
+                    Más que un corte
+                </h2>
+
+                <p>
+                    Una experiencia diseñada para que salgas
+                    sintiéndote mejor que cuando entraste.
+                </p>
+
+            </div>
+
+
+            <div class="about">
+
+                <!-- FOTO 1 -->
+                <div class="about-image"></div>
+
+
+                <div class="about-text">
+
+                    <h3>
+                        Estilo que habla por ti.
+                    </h3>
+
+                    <p>
+                        Bienvenidos a
+                        <span class="highlight">
+                            Azua Barber Shop
+                        </span>.
+                    </p>
+
+                    <p>
+                        Somos una barbería enfocada en ofrecer
+                        cortes modernos, clásicos y estilos
+                        personalizados para hombres y niños.
+                    </p>
+
+                    <p>
+                        Nuestro barbero
+                        <span class="highlight">
+                            Fraylin
+                        </span>
+                        trabaja cada detalle para conseguir
+                        el estilo que buscas.
+                    </p>
+
+                    <a href="https://wa.me/18492590890"
+                        target="_blank"
+                        class="btn btn-gold">
+
+                        Quiero mi corte →
+
+                    </a>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             SERVICIOS
+        ========================= -->
+
+        <section id="servicios">
+
+            <div class="section-title">
+
+                <span>
+                    Nuestro menú
+                </span>
+
+                <h2>
+                    Servicios
+                </h2>
+
+                <p>
+                    Elige tu estilo y déjanos encargarnos
+                    del resto.
+                </p>
+
+            </div>
+
+
+            <div class="servicios">
+
+
+                <div class="servicio">
+
+                    <div class="icon">
+                        ✂️
+                    </div>
+
+                    <h3>
+                        Corte Clásico
+                    </h3>
+
+                    <p>
+                        Corte tradicional con acabado profesional.
+                    </p>
+
+                    <div class="precio">
+                        RD$300
+                    </div>
+
+                </div>
+
+
+                <div class="servicio">
+
+                    <div class="icon">
+                        🔥
+                    </div>
+
+                    <h3>
+                        Corte Moderno
+                    </h3>
+
+                    <p>
+                        Estilos modernos y personalizados.
+                    </p>
+
+                    <div class="precio">
+                        RD$350
+                    </div>
+
+                </div>
+
+
+                <div class="servicio">
+
+                    <div class="icon">
+                        🧔
+                    </div>
+
+                    <h3>
+                        Arreglo de Barba
+                    </h3>
+
+                    <p>
+                        Perfilado y arreglo profesional.
+                    </p>
+
+                    <div class="precio">
+                        RD$200
+                    </div>
+
+                </div>
+
+
+                <div class="servicio">
+
+                    <div class="icon">
+                        💈
+                    </div>
+
+                    <h3>
+                        Corte + Barba
+                    </h3>
+
+                    <p>
+                        Corte de cabello acompañado de barba.
+                    </p>
+
+                    <div class="precio">
+                        RD$500
+                    </div>
+
+                </div>
+
+
+                <div class="servicio">
+
+                    <div class="icon">
+                        👦
+                    </div>
+
+                    <h3>
+                        Corte para Niños
+                    </h3>
+
+                    <p>
+                        Cortes modernos y cómodos para niños.
+                    </p>
+
+                    <div class="precio">
+                        RD$250
+                    </div>
+
+                </div>
+
+
+                <div class="servicio">
+
+                    <div class="icon">
+                        🪒
+                    </div>
+
+                    <h3>
+                        Perfilado
+                    </h3>
+
+                    <p>
+                        Definición y perfilado de barba.
+                    </p>
+
+                    <div class="precio">
+                        RD$150
+                    </div>
+
+                </div>
+
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             INFORMACIÓN
+        ========================= -->
+
+        <section id="informacion">
+
+            <div class="section-title">
+
+                <span>
+                    Encuéntranos
+                </span>
+
+                <h2>
+                    Información
+                </h2>
+
+            </div>
+
+
+            <div class="info-grid">
+
+
+                <div class="info-card">
+
+                    <div class="info-icon">
+                        📍
+                    </div>
+
+                    <h3>
+                        Ubicación
+                    </h3>
+
+                    <p>
+                        Calle El Sol #60
+                        <br>
+                        Sector 30 de Mayo
+                        <br>
+                        Santo Domingo
+                    </p>
+
+                </div>
+
+
+                <div class="info-card">
+
+                    <div class="info-icon">
+                        ✂️
+                    </div>
+
+                    <h3>
+                        Barbero
+                    </h3>
+
+                    <p>
+                        Fraylin
+                        <br>
+                        Atención personalizada
+                    </p>
+
+                </div>
+
+
+                <div class="info-card">
+
+                    <div class="info-icon">
+                        🕐
+                    </div>
+
+                    <h3>
+                        Horario
+                    </h3>
+
+                    <p>
+                        Lunes - Sábado
+                        <br>
+                        9:00 AM - 8:00 PM
+
+                        <br><br>
+
+                        Domingo
+                        <br>
+                        10:00 AM - 5:00 PM
+                    </p>
+
+                </div>
+
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             RESERVA
+        ========================= -->
+
+        <section id="cita">
+
+            <div class="booking">
+
+                <h2>
+                    ¿Listo para tu próximo corte?
+                </h2>
+
+                <p>
+                    Escríbenos por WhatsApp y reserva
+                    tu horario de forma rápida y sencilla.
+                </p>
+
+                <a href="https://wa.me/18492590890"
+                    target="_blank"
+                    class="whatsapp">
+
+                    💬 Reservar por WhatsApp
+
+                </a>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             FORMULARIO
+        ========================= -->
+
+        <section>
+
+            <div class="section-title">
+
+                <span>
+                    Contacto
+                </span>
+
+                <h2>
+                    Envíanos un mensaje
+                </h2>
+
+            </div>
+
+
+            <div class="formulario">
+
+                <form action="#" method="post">
+
+                    <label for="nombre">
+                        Nombre
+                    </label>
+
+                    <input
+                        type="text"
+                        id="nombre"
+                        name="nombre"
+                        placeholder="Tu nombre"
+                        required>
+
+
+                    <label for="email">
+                        Email
+                    </label>
+
+                    <input
+                        type="email"
+                        id="email"
+                        name="email"
+                        placeholder="ejemplo@gmail.com"
+                        required>
+
+
+                    <label for="mensaje">
+                        Mensaje
+                    </label>
+
+                    <textarea
+                        id="mensaje"
+                        name="mensaje"
+                        placeholder="¿Qué servicio deseas y qué día te gustaría venir?"
+                        required></textarea>
+
+
+                    <button type="submit">
+                        Enviar solicitud
+                    </button>
+
+                </form>
+
+            </div>
+
+        </section>
+
+
+    </main>
+
+
+    <!-- =========================
+         FOOTER
+    ========================= -->
+
+    <footer>
+
+        <p>
+            © 2026
+
+            <strong>
+                Azua Barber Shop
+            </strong>
+        </p>
+
+        <p>
+            Estilo · Precisión · Calidad
+        </p>
+
+        <p>
+            Santo Domingo, República Dominicana
+        </p>
+
+    </footer>
+
+
+    <!-- =========================
+         WHATSAPP FLOTANTE
+    ========================= -->
+
+    <a href="https://wa.me/18492590890"
+        target="_blank"
+        class="whatsapp-float"
+        aria-label="Contactar por WhatsApp">
+
+        💬
+
+    </a>
+
+
+</body>
+
+</html>
